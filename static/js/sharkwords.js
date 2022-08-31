@@ -57,6 +57,34 @@ const isLetterInWord = (letter) => {
   };
 };
 
+//const isLetterInWord = (letter) => document.querySelector(`div.${letter}`) !== null;
+
+
+// Called when `letter` is in word. Update contents of divs with `letter`.
+//
+const handleCorrectGuess = (letter) => {
+  if (document.querySelector('#letter-box').LetterDiv.contains(letter)){
+    document.querySelector('#letter-box').LetterDiv.add(letter)
+  }
+};
+
+//
+// Called when `letter` is not in word.
+//
+// Increment `numWrong` and update the shark image.
+// If the shark gets the person (5 wrong guesses), disable
+// all buttons and show the "play again" message.
+
+const handleWrongGuess = () => {
+  numWrong += 1;
+  // Replace this with your code
+};
+
+//  Reset game state. Called before restarting the game.
+const resetGame = () => {
+  window.location = '/sharkwords';
+};
+
 // This is like if __name__ == '__main__' in Python
 // It will be called when the file is run (because
 // we call the function on line 66)
@@ -72,6 +100,8 @@ const isLetterInWord = (letter) => {
 
   // call the function that makes a button for each letter in the alphabet
   generateLetterButtons();
+
+  handleCorrectGuess();
 
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
